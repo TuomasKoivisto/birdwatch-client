@@ -1,0 +1,76 @@
+.App-title {
+  font-size: 1.4em;
+}
+
+.App-intro {
+  font-size: 17px;
+}
+
+form {
+  font-size: 14px;
+}
+
+textarea {
+  overflow: scroll;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  overflow: -moz-scrollbars-vertical;
+}
+
+.mobile-button {
+  width: 50%;
+}
+
+.mobile-form {
+  margin: auto;
+  width: 80%;
+}
+
+#table-div table {
+  display: block;
+  max-height: 80vh;
+  overflow-y: scroll;
+  word-wrap: break-word;
+  font-size: 14px;
+}
+
+@media only screen and (min-width: 700px) {
+  .add-form {
+    width: 40%;
+    float: left;
+  }
+  .view {
+    width: 55%;
+    float: right;
+  }
+  #accordion {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .desktop {
+    display: none;
+  }
+  #table-div {
+    max-width: 100%;
+    padding: 0px;
+  }
+  #table-div table {
+    padding: 0px;
+    font-size: 11px;
+    font-weight: 400;
+  }
+  .App-title {
+    font-size: 1.2em;
+  }
+  .App-intro {
+    font-size: 16px;
+  }
+  form {
+    font-size: 13px;
+  }
+  .btn {
+    font-size: 14px;
+  }
+}
