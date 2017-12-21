@@ -19,7 +19,7 @@ class Add extends Component {
 
   componentWillMount() {
     $.ajax({
-      url: 'http://localhost:8081/species',
+      url: 'https://morning-sands-39347.herokuapp.com/species',
       dataType: 'json',
       method: 'GET'
     }).then(response => {
@@ -62,7 +62,7 @@ class Add extends Component {
                 description: this.state.description
               };
               $.ajax({
-                url: 'http://localhost:8081/sightings',
+                url: 'https://morning-sands-39347.herokuapp.com/sightings',
                 data: JSON.stringify(sighting),
                 method: 'POST',
                 contentType: 'application/json'

@@ -63,7 +63,7 @@ class App extends Component {
 
   updateSightings() {
     $.ajax({
-      url: 'http://localhost:8081/sightings',
+      url: 'https://morning-sands-39347.herokuapp.com/sightings',
       dataType: 'json',
       method: 'GET'
     }).then(response => {
