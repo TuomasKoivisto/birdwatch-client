@@ -25,7 +25,7 @@ const BodyMobile = props => {
 
         <div
           id="collapseOne"
-          className="collapse show"
+          className="collapse"
           role="tabpanel"
           aria-labelledby="headingOne"
           data-parent="#accordion"
@@ -35,6 +35,12 @@ const BodyMobile = props => {
               addHandler={props.addHandler}
               birdNotFoundHandler={props.birdNotFoundHandler}
               removeBirdNotFound={props.removeBirdNotFound}
+              sightingAdded={props.sightingAdded}
+              sightingAddedHandler={props.sightingAddedHandler}
+              removeSightingAdded={props.removeSightingAdded}
+              BtnDisabledHandler={props.BtnDisabledHandler}
+              BtnEnabledHandler={props.BtnEnabledHandler}
+              btnDisabled={props.btnDisabled}
               className="form mobile-form mobile-form-hide"
             />
           </div>
@@ -69,6 +75,7 @@ const BodyMobile = props => {
               sightings={props.sightings}
               listingHandler={props.listingHandler}
               listReverseHandler={props.listReverseHandler}
+              removeSightingAdded={props.removeSightingAdded}
             />
           </div>
         </div>

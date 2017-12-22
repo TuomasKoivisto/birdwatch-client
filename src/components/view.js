@@ -7,8 +7,8 @@ const View = props => {
   var table = _.map(props.sightings, sighting => {
     return (
       <tr key={sighting.id}>
-        <td>{sighting.id}</td>
         <td>{sighting.dateTime}</td>
+        <td>{sighting.id}</td>
         <td>{sighting.species}</td>
         <td>{sighting.count}</td>
         <td>{sighting.description}</td>
@@ -22,6 +22,7 @@ const View = props => {
           onClick={() => {
             props.listingHandler();
             props.listReverseHandler();
+            props.removeSightingAdded();
           }}
           type="button"
           className="btn btn-secondary"
@@ -33,8 +34,8 @@ const View = props => {
         <table className="table table-striped table-responsive table-sm mt-4 text-left">
           <thead>
             <tr>
-              <th scope="col">Id</th>
               <th scope="col">Time</th>
+              <th scope="col">Id</th>
               <th scope="col">Bird</th>
               <th scope="col">Count</th>
               <th scope="col">Description</th>

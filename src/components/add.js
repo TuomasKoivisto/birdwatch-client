@@ -53,6 +53,7 @@ class Add extends Component {
         <form
           onSubmit={e => {
             e.preventDefault();
+            this.props.BtnDisabledHandler();
             var send = this.validateForm();
             if (send) {
               var sighting = {
@@ -74,9 +75,12 @@ class Add extends Component {
                   description: ''
                 });
                 this.props.addHandler();
+                this.props.sightingAddedHandler();
+                this.props.BtnEnabledHandler();
               });
             } else {
               this.props.birdNotFoundHandler();
+              this.props.BtnEnabledHandler();
               return false;
             }
           }}
@@ -92,6 +96,7 @@ class Add extends Component {
                 var res = str.toLowerCase();
                 this.setState({ bird: res });
                 this.props.removeBirdNotFound();
+                this.props.removeSightingAdded();
               }}
               type="text"
               className="form-control"
@@ -111,6 +116,7 @@ class Add extends Component {
                 if (e.target.value >= 1) {
                   this.setState({ count: e.target.value });
                 }
+                this.props.removeSightingAdded();
               }}
               type="number"
               className="form-control"
@@ -129,6 +135,7 @@ class Add extends Component {
               name="time"
               onChange={e => {
                 this.setState({ time: e.target.value });
+                this.props.removeSightingAdded();
               }}
               type="datetime-local"
               className="form-control"
@@ -144,6 +151,7 @@ class Add extends Component {
               name="description"
               onChange={e => {
                 this.setState({ description: e.target.value });
+                this.props.removeSightingAdded();
               }}
               className="form-control"
               value={this.state.description}
@@ -151,9 +159,16 @@ class Add extends Component {
             />
           </div>
           <div className="text-center">
-            <button type="submit" className="btn btn-primary">
+            <button
+              type="submit"
+              className="btn btn-primary"
+              disabled={this.props.btnDisabled}
+            >
               Send
             </button>
+            <p className="text-success mt-3 large">
+              {this.props.sightingAdded}
+            </p>
           </div>
         </form>
       </div>
