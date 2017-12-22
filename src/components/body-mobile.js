@@ -35,6 +35,7 @@ const BodyMobile = props => {
               addHandler={props.addHandler}
               birdNotFoundHandler={props.birdNotFoundHandler}
               removeBirdNotFound={props.removeBirdNotFound}
+              birdNotFound={props.birdNotFound}
               sightingAdded={props.sightingAdded}
               sightingAddedHandler={props.sightingAddedHandler}
               removeSightingAdded={props.removeSightingAdded}
